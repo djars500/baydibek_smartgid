@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class=center-block>
+                    <div class="info-box shadow">
+                        <img height=126px class=info-box__icon id="weatherIcon" src="./images/sunny.svg" alt="">
+                        <div class=info-box__weather>
+                            <h2 class=info-box__weather-name>Погода в БОРЛЫсай</h2>
+                            <h1 class=info-box__weather-grade id='weatherText'>+33°</h1>
+                        </div>
+                        <div class=info-box__datetime>
+                            <h2 class=info-box__datetime-subtitle>ДАТА</h2>
+                            <h1 id="date" class=info-box__datetime-title>2021.10.05</h1>
+                            <h2 class=info-box__datetime-subtitle>Время</h2>
+                            <h1 id="time" class=info-box__datetime-title>12:54:55</h1>
+                        </div>
+                    </div>
+                    <div class=center-box>
+                        <div class=center-box__logo>
+                            <img src="{% static 'images/logo.png' %}"/>
+                            <h2 class=center-box__title>SMART-GID</h2>
+                            <p class=centet-box__subtitle>БОРЛысай ауылы</p>
+                        </div>
+                        <div class=play id=playBtn>
+                            <img class=active  src="{% static 'images/polygon.png' %}" alt="">
+                            <img class="deactive pauseBtn" src="{% static 'images/pause.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class=news-box>
+                        <article class="news shadow">
+                            <img class=news-box__icon height="31px" src="./images/news.svg" alt="">
+                            <h2 class=news-box__title>Мэр в Бразилии скончался от последствий коронавируса</h2>
+                            <time class="news-box__datetime">2 декабря 2021</time>
+                        </article>
+                        <article class="news shadow">
+                            <img class=news-box__icon height="31px" src="./images/news.svg" alt="">
+                            <h2 class=news-box__title>Мэр в Бразилии скончался от последствий коронавируса</h2>
+                            <time class="news-box__datetime">2 декабря 2021</time>
+                        </article>
+                    </div>
+                </div>
+
+{% endblock %}

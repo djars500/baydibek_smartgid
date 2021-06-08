@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class=center-block>
+                    <div class=category-block>
+                        <div class=category-block__top>
+                            <div class=category-block__top__back-btn>
+                                <a href="{% url 'main' %}"><img height="40px" src="{% static 'images/back-button.svg' %}" alt=""></a>
+                            </div>
+                            <div class="category-block__top__weather">
+                                <img height=40px class=category-block__top__weather-icon id="weatherIcon" src="{% static 'images/sunny.svg' %}" alt="">
+                                <h1 class=category-block__top__weather-text id='weatherText'>+33°</h1>
+                            </div>
+                        </div>
+                        <div class="category-slider">
+                            <!-- Slider main container -->
+                        <div class="swiper-container">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                            <!-- Slides -->
+                                {% for post in posts %}
+                            <div class="swiper-slide">
+                                <a href="{{post.get_absolute_url}}" class="category-slider__item">
+                                    <div class="category-slider__img-block">
+                                        <img class="category-slider__img" src="{{post.img.url}}" alt="">
+                                        <h2 class="category-slider__title">{{post.title}}</h2>
+                                    </div>
+
+                                    <p class="category-slider__description">
+                                        {% autoescape off %}{{post.description}}{% endautoescape %}
+                                    </p>
+                                </a>
+                            </div>
+                                {% endfor %}
+
+
+                            </div>
+
+
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+
+
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+{% endblock %}
