@@ -8,6 +8,7 @@
                             <div class=category-block__top__back-btn>
                                 <a href="{% url 'main' %}"><img height="40px" src="{% static 'images/back-button.svg' %}" alt=""></a>
                             </div>
+                            <h1 class=single-page__title>{{category.name}}</h1>
                             <div class="category-block__top__weather">
                                 <img height=40px class=category-block__top__weather-icon id="weatherIcon" src="{% static 'images/sunny.svg' %}" alt="">
                                 <h1 class=category-block__top__weather-text id='weatherText'>+33°</h1>
@@ -36,9 +37,7 @@
                             </div>
 
 
-                            <!-- If we need navigation buttons -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
+                        
 
 
                         </div>

@@ -10,6 +10,14 @@ def main(request):
     }
     return render(request, 'index.html', context)
 
+def historyBaidybekView(request):
+    return render(request, 'historyBaidybek.html')
+
+def shayanView(request):
+    return render(request, 'shayan.html')
+
+def borlisayView(request):
+    return render(request, 'borlisay.html')
 
 def category_detailView(request, slug):
     category = Category.objects.get(slug=slug)

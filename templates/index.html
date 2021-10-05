@@ -4,49 +4,38 @@
 {% block content %}
 <video class="player" id='mainPlayer' src="{% static 'videos/gymn.webm' %}"></video>
 <div class=center-block>
-                    <div class="info-box shadow">
-                        <img height=126px class=info-box__icon id="weatherIcon" src="./images/sunny.svg" alt="">
-                        <div class=info-box__weather>
-                          <h2 class=info-box__weather-name style='text-align:center'>Байдібек би ауданының </br> ауа-райы</h2>
-                            <h1 class=info-box__weather-grade id='weatherText'>+33°</h1>
-                        </div>
-                        <div class=info-box__datetime>
-                            <h2 class=info-box__datetime-subtitle>Күн</h2>
-                            <h1 id="date" class=info-box__datetime-title>2021.10.05</h1>
-                            <h2 class=info-box__datetime-subtitle>Уақыт</h2>
-                            <h1 id="time" class=info-box__datetime-title>12:54:55</h1>
-                        </div>
-                    </div>
-                    <div class=center-box>
-                        <div class=center-box__logo>
-                            <img src="{% static 'images/logo.png' %}"/>
-                            <h2 class=center-box__title>SMART-GID</h2>
-                            <p class=centet-box__subtitle>Байдібек би ауданы</p>
-                        </div>
-                        <div class=play id=playBtn>
-                            <img class=active  src="{% static 'images/polygon.png' %}" alt="">
-                            <img class="deactive pauseBtn" src="{% static 'images/pause.png' %}" alt="">
-                        </div>
-                    </div>
-                    <div class=news-box>
-                        <article class="news shadow">
-                            <img class=news-box__icon height="31px" src="./images/news.svg" alt="">
-                            <h2 class=news-box__title>«Ақылды күнбағыс» ақпараттық-танымдық кешені
-
-“Ақылды күнбағыс” күн панельдері арқылы күн көзінен аккумуляторға қуат жинайды. Жиналған қуат ұялы телефондарды,  планшеттерді қуаттауға, жарықтандыру шамдарын жағуға, танымдық кешен құрылғысын іске қосуға жұмсалады.
-
-Сонымен бірге Wi-Fi желісін тегін тарату  мүмкіндігі  бар. Wi-Fi желісіне құпия сөз (пароль) ретінде ай сайын танымдық сұрақтардың жауаптары қойылады
-Ауыл тұрғындары мен қонақтары арнайы «Ақпараттық қызмет көрсету» қосымшасы арқылы  көрікті жерлер, архитектуралы нысандар, саябақтар,  тамақтану орындары және ойын-сауық кешендері туралы қазақ мәлімет  алуына болады. 
-«Ақпараттық қызмет көрсету» қосымшасына қазақ тіліндегі фильмдер мен ән-күйлер жинақталған.
- 
-  	Идея авторлары: Жұматаев Н.С., Болат Б., Байділдаев Е., Қожахан Д.
-Осы айдағы Wi-Fi желісінің құпия сөзі :    ақын, Абай Құнанбаевтың өмір сүрген жылдарын бірге жазыңыз.
-
- Пароль Wi-Fi в этом месяце: наберите годы жизни поэта Абая Кунанбаева.</h2>
-             
-                        </article>
-                        
-                    </div>
-                </div>
+    <div class="info-box shadow">
+        <img height=126px class=info-box__icon id="weatherIcon" src="./images/sunny.svg" alt="">
+        <div class=info-box__weather>
+            <h2 class=info-box__weather-name style='text-align:center'>Байдібек би ауданының </br> ауа-райы</h2>
+            <h1 class=info-box__weather-grade id='weatherText'>+33°</h1>
+        </div>
+        <div class=info-box__datetime>
+            <h2 class=info-box__datetime-subtitle>Күн</h2>
+            <h1 id="date" class=info-box__datetime-title>2021.10.05</h1>
+            <h2 class=info-box__datetime-subtitle>Уақыт</h2>
+            <h1 id="time" class=info-box__datetime-title>12:54:55</h1>
+        </div>
+    </div>
+    <div class=center-box>
+        <div class=center-box__logo>
+            <img src="{% static 'images/logo.png' %}" />
+            <h2 class=center-box__title>SMART-GID</h2>
+            <p class=centet-box__subtitle>Байдібек би ауданы</p>
+        </div>
+        <div class=play id=playBtn>
+            <img class=active src="{% static 'images/polygon.png' %}" alt="">
+            <img class="deactive pauseBtn" src="{% static 'images/pause.png' %}" alt="">
+        </div>
+    </div>
+    <div class="grid">
+        <a href="{% url 'shayan' %}" class="grid__item" >
+            <h2 class="grid__item-text">Шаян</h2>
+        </a>
+        <a href="{% url 'borlisay' %}" class="grid__item">
+            <h2 class="grid__item-text">Борлысай</h2>
+        </a>
+    </div>
+</div>
 
 {% endblock %}

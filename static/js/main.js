@@ -76,32 +76,45 @@ let weatherInterval = setInterval(function(){
 
 
 
-let isYes = document.getElementById('date');
-
-if (isYes) {
+let dateBlock = document.getElementById('date');
 
 
+function getStringByMonth(month) {
+  switch (month) {
+    case 1: return 'Қаңтардың'
+    case 2: return 'Ақпанның'
+    case 3: return 'Наурыздың'
+    case 4: return 'Сәуір'
+    case 5: return 'Мамырдың'
+    case 6: return 'Маусымның'
+    case 7: return 'Шілденің'
+    case 8: return 'Тамыздың'
+    case 9: return 'Қыркүйектің'
+    case 10: return 'Қазанның'
+    case 11: return 'Қарашаның'
+    case 12: return 'Желтоқсанның'
+  }
+}
 
+
+
+if (dateBlock) {
     let today = new Date();
     todayString = today.toLocaleString('kk-KZ', { day:'numeric', month: 'long', year: 'numeric' });
-    isYes.innerHTML = todayString;
+    dateBlock.innerHTML = `${getStringByMonth(today.getMonth())} ${today.getDate()} ${today.getFullYear()} жыл`;
+    document.getElementById("time").innerHTML = today.toLocaleTimeString();
 
     let time = setInterval(function() {
         let date = new Date();
-        document.getElementById("time").innerHTML = date.getHours()  + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+        document.getElementById("time").innerHTML = date.toLocaleTimeString();
       }, 1000);
     
-    
-
     let date = setInterval(function() {
-        let date = new Date();
-      	todayString = date.toLocaleString('kk-KZ', { day:'numeric', month: 'long', year: 'numeric' });
-        document.getElementById("date").innerHTML = todayString;
+      dateBlock.innerHTML = `${getStringByMonth(today.getMonth())} ${today.getDate()} ${today.getFullYear()} жыл`;
     }, 60*120);
         
-        
-    
-}
+  }
 
 
 

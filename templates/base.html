@@ -13,9 +13,18 @@
 <body>
     
     <div class=wrapper>
+        <div class="info">
+            Сайтқа ақпараттар салынуда
+        </div>
         <div class=container>
             <div class=wrapper__row>
                 <div class=left-block>
+                    <a class="main-box-hreff " href="{% url 'historyBaidybek' %}">
+                        <article class="main-box shadow">
+                            <img class=main-box__img src="{% static 'images/history.jpg' %}" alt="">
+                            <h2 class=main-box__title >Ауданның тарихы</h2>
+                        </article>
+                    </a>
                     {% for category in cat %}
                     <a class="main-box-hreff " href="{{category.get_absolute_url}}">
                         <article class="main-box shadow">

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class=center-block>
+                    <div class=single-page-block>
+                        <div class=single-page__top>
+                            <a href="/" class=single-page__top__back-btn>
+                                <img height="40px" src="{% static 'images/back-button.svg' %}" alt="">
+                            </a>
+                            <h1 class=single-page__title>Борлысай ауылдық огругі</h1>
+                            <div class="single-page__top__weather">
+                                <img height=40px class=single-page__top__weather-icon id="weatherIcon" src="{% static 'images/sunny.svg' %}" alt="">
+                                <h1 class=single-page__top__weather-text id='weatherText'>+33°</h1>
+                            </div>
+                        </div>
+                        <div class="single-page__paragraph">
+                            <p>
+                                Борлысай
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+{% endblock %}

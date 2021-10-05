@@ -23,7 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c)i%6cvnd1!1$297@!le-9#f#x7y6!2#61-x*bb^l6!v8331d2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+try:
+    from . import local
+    DEBUG = True
+except:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -77,12 +82,21 @@ WSGI_APPLICATION = 'smartgid.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'dbprod.sqlite3',
+        }
+    }
 
 
 # Password validation

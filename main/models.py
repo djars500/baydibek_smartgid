@@ -1,11 +1,19 @@
 from django.db import models
 from django.urls import reverse
 
+
+class City(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
 # Create your models here.
 class Category(models.Model):
     name = models.CharField('Название', max_length=255)
     slug = models.SlugField(max_length=255)
     img = models.ImageField(upload_to='', default=0, blank=True, null=True)
+    city = models.ForeignKey(City, null=True, blank=True, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Категория'
@@ -24,6 +32,7 @@ class MediaCategory(models.Model):
     name = models.CharField('Название', max_length=255)
     slug = models.SlugField(max_length=255)
     img = models.ImageField(upload_to='', default=0, blank=True, null=True)
+
 
     class Meta:
         verbose_name = 'Медия категория'

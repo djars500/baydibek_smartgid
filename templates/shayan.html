@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class=center-block>
+                    <div class=single-page-block>
+                        <div class=single-page__top>
+                            <a href="/" class=single-page__top__back-btn>
+                                <img height="40px" src="{% static 'images/back-button.svg' %}" alt="">
+                            </a>
+                            <h1 class=single-page__title>Шаян ауылы</h1>
+                            <div class="single-page__top__weather">
+                                <img height=40px class=single-page__top__weather-icon id="weatherIcon" src="{% static 'images/sunny.svg' %}" alt="">
+                                <h1 class=single-page__top__weather-text id='weatherText'>+33°</h1>
+                            </div>
+                        </div>
+                        <div class="single-page__paragraph">
+                            <p>
+                               <strong>Шаян (каз. Шаян)</strong> село в Туркестанской области Казахстана. Административный центр Байдибекского района. Административный центр и единственный населённый пункт Косакжарского сельского округа. Код КАТО — 513630100. Находится на реке Шаян.
+                               В селе Шаян находится средняя школа имени Мухтара Ауезова и мечеть медресе Аппак Ишана, построенная в 19 веке.
+                            </p>
+                            <h2>Население</h2>
+                            <p>В 1999 году население села составляло 7763 человека (3819 мужчин и 3944 женщины). По данным переписи 2009 года, в селе проживало 8510 человек (4204 мужчины и 4306 женщин).
+                                На начало 2019 года население села составило 7452 человека (3946 мужчин и 3506 женщин).
+                                </p>
+                        </div>
+                    </div>
+                </div>
+
+
+{% endblock %}
