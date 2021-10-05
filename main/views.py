@@ -49,7 +49,7 @@ def postDetailView(request, slug):
 
 def mediaPostDetailView(request, slug):
     post= PostMedia.objects.get(slug=slug)
-    category = post.category
+    category = post.media_category
     category_url = reverse('mediaCategory_detailView', args=[category.slug])
     data = {
         'post': post,

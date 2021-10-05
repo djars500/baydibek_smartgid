@@ -1,16 +1,11 @@
-"""
-WSGI config for smartgid project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/
-"""
-
 import os
-
-from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'smartgid.settings')
-
-application = get_wsgi_application()
+import sys
+ 
+sys.path.append('/home/c/ca21350/django_3/public_html/baydibek_smartgid') # путь до проекта django; u и user - первая буква Вашего логина и сам логин соответственно
+sys.path.append('/home/c/ca21350/django_3/env/lib/python3.6/site-packages/') # путь до django; u и user - первая буква Вашего логина и сам логин соответственно
+os.environ['DJANGO_SETTINGS_MODULE'] = 'smartgid.settings'
+import django
+django.setup()
+ 
+from django.core.handlers import wsgi
+application = wsgi.WSGIHandler()
